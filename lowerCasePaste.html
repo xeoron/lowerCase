@@ -16,15 +16,15 @@
    //wish list feature: activate makeLower function upon pasting data into the text area
 
    function copyTextToClipboard(text) {
-      if (!navigator.clipboard) {
-        fallbackCopyTextToClipboard(text);
-        return;
-      }
-      navigator.clipboard.writeText(text).then(function() {
+       if (!navigator.clipboard) {
+          fallbackCopyTextToClipboard(text);
+          return;
+       }
+       navigator.clipboard.writeText(text).then(function() {
             console.log('Async: Copying to clipboard was successful!');
-        }, function(err) {
+         }, function(err) {
             console.error('Async: Could not copy text: ', err);
-      });
+       });
    }//end copyTextToClipboard
 
    function handleEvent(oEvent) {  // React to Enter key down event
@@ -37,7 +37,7 @@
             copyTextToClipboard(oTextbox.value.toLowerCase());
             oTextbox.value='';
        }
-    }//end handleEvent
+   }//end handleEvent
    
    function makeLower(textarea){   //convert when click outside the text box
         if (document.hasFocus()) {
