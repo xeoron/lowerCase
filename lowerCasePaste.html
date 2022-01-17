@@ -7,7 +7,7 @@
     the conversion and uploading to the clipboard. 
 
     Author: Jason Campisi 
-    Version: 0.9.1
+    Version: 0.9.2
     License: GPL v3
     Date: 1/15/22
 -->
@@ -37,14 +37,14 @@
             copyTextToClipboard(oTextbox.value.toLowerCase());
             oTextbox.value='';
        }
-	}
+    }//end handleEvent
    
    function makeLower(textarea){   //convert when click outside the text box
         if (document.hasFocus()) {
             copyTextToClipboard(textarea.value.toLowerCase());
           textarea.value='';
         }
-   }
+   }//end makeLower
 
 </script>
 </head>
