@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Convert text to Lowercase</title>
+<script>
+   function copyTextToClipboard(text) {
+      if (!navigator.clipboard) {
+        fallbackCopyTextToClipboard(text);
+        return;
+      }
+      navigator.clipboard.writeText(text).then(function() {
+            console.log('Async: Copying to clipboard was successful!');
+        }, function(err) {
+            console.error('Async: Could not copy text: ', err);
+      });
+   }//end copyTextToClipboard
+
+   function handleEvent(oEvent) {  // React to Enter key down event
+       if (oEvent.defaultPrevented) {
+            return; // Should do nothing if the default action has been cancelled
+       }
+       
+       if (document.hasFocus() && oEvent.keyCode === 13) {  // https://keycode.info/
+		    var oTextbox = document.getElementById("myInput");
+            copyTextToClipboard(oTextbox.value.toLowerCase());
+            oTextbox.value='';
+       }
+	}
+   
+   function makeLower(textarea){   //convert when click outside the text box
+        if (document.hasFocus()) {
+            copyTextToClipboard(textarea.value.toLowerCase());
+        //string = textarea.value;
+        //string = string.toLowerCase();
+        //window.copyTextToClipboard(string);
+          textarea.value='';
+        }
+   }
+</script>
+</head>
+<body>
+<p>Input Data: Convert to Lowercase and Paste to the Clipboard</p>
+<form>
+    <div>
+        <textarea id="myInput" onkeydown="handleEvent(event)" onchange='makeLower(this);' rows="3" cols="50"></textarea>
+    </div>
+
+</form>
+</body>
