@@ -8,7 +8,7 @@
     the conversion and uploading to the clipboard. 
 
     Author: Jason Campisi 
-    Version: 0.9.3
+    Version: 0.9.4
     License: GPL v3
     Date: 1/15/22
 -->
@@ -17,7 +17,10 @@
    //wish list feature: activate makeLower function upon pasting data into the text area
 
    function copyTextToClipboard(text) {
-       if (!navigator.clipboard) {
+       if (text.length === 0 ){  // if empty do nothing
+           return;
+       }
+       else if (!navigator.clipboard) {
           fallbackCopyTextToClipboard(text);
           return;
        }
