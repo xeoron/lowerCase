@@ -37,7 +37,7 @@
        }
        
        if (document.hasFocus() && oEvent.keyCode === 13) {  // https://keycode.info/
-		    var oTextbox = document.getElementById("myInput");
+	    var oTextbox = document.getElementById("myInput");
             oTextbox.value=oTextbox.value.trim();
             copyTextToClipboard(oTextbox.value.toLowerCase());
             oTextbox.value="";
