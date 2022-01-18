@@ -17,7 +17,7 @@
    //wish list feature: activate makeLower function upon pasting data into the text area
 
    function copyTextToClipboard(text) {
-       if (text.length === 0 ){  // if empty do nothing
+       if (text.length === 0){  // if empty do nothing
            return;
        }
        else if (!navigator.clipboard) {
@@ -38,6 +38,7 @@
        
        if (document.hasFocus() && oEvent.keyCode === 13) {  // https://keycode.info/
 		    var oTextbox = document.getElementById("myInput");
+            oTextbox.value=oTextbox.value.trim();
             copyTextToClipboard(oTextbox.value.toLowerCase());
             oTextbox.value="";
        }
@@ -45,6 +46,7 @@
    
    function makeLower(textarea){   //convert when click outside the text box
         if (document.hasFocus()) {
+            textarea.value.trim();
             copyTextToClipboard(textarea.value.toLowerCase());
             textarea.value="";
         }
