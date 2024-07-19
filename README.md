@@ -7,4 +7,4 @@ This is a simple html/javascript text box that converts any text to lowercase an
 <img src="https://github.com/xeoron/ackWelowerCase/blob/master/images/lowercase_clipboard.png?raw=true"/>
 
 # Tested 
-Works fine with Chrome, Firefox and Safari on macOS 12. No other browsers or systems it has been tested with.
+Works fine with Chrome, Firefox and Safari. No other browsers or systems it has been tested with.
