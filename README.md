@@ -15,4 +15,4 @@ Example: Clipboard Results
 
 
 # Tested 
-Works fine with Chrome, Firefox and Safari. No other browsers or systems it has been tested with.
+Works fine with Chrome, Firefox and Safari. Linux, MacOS, Windows 10/11 tested. 
